@@ -1,0 +1,13 @@
+.BunsBuilder {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+
+}
+
+.CaseButtons {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}

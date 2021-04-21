@@ -1,0 +1,20 @@
+.BunsControl {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+.ControlButton {
+    border-radius: 50%;
+    border: 0px;
+    font-size: 25px;
+    color: #b709ce;
+    width: 30px;
+    height: 30px;
+    outline: none;
+}
+.ControlButton:hover {
+    color: white;
+    background-color: #b709ce;
+    box-shadow: 0px 0px 15px black;
+}

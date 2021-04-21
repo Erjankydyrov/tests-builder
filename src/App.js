@@ -1,23 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import { Redirect, Route, Switch } from "react-router";
+import "./App.css";
+import BunsBuilder from "./components/BunsBuilder/BunsBuilder";
+import Checkout from "./components/Checkout/Checkout";
+import Layout from "./components/Layout/Layout";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Layout>
+        <h1>Sweet bakery</h1>
+        <Switch>
+          <Route path="/" component={BunsBuilder} exact />
+          <Route path="/checkout" component={Checkout} />
+          <Redirect to="/" />
+        </Switch>
+      </Layout>
     </div>
   );
 }
