@@ -5,7 +5,7 @@
     margin-right: 1rem;
     margin-bottom: 1rem;
     border-radius: 20px;
-    background-color: #575550;
+    background-color: #ffc240;
     padding: 10px;
 
     display: flex;
@@ -22,7 +22,7 @@
 .price {
     font-size: 1.5rem;
     color: white;
-    background-color: #b709ce;
+    background-color: #008bee;
     border-radius: 1rem;
     padding: 0 1rem;
     margin-top: 40px;

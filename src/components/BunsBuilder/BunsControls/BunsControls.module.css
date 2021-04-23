@@ -1,9 +1,9 @@
 .BunsControls {
     min-width: 300px;
-    min-height: 400px;
+    max-height: 490px;
     padding: 1rem;
 
-    background-color: #b709ce;
+    background-color: #008bee;
     color: white;
     border-radius: 30px;
 }
