@@ -2,7 +2,7 @@ import Button from "../../../UI/Button/Button";
 import BunsIngredient from "../../BunsIngredient/BunsIngredient";
 import classes from "./BunsControl.module.css";
 
-const BunsControl = ({ switchFilling, count, type, addIngredient, removeIngredient }) => {
+const BunsControl = ({ count, type, addIngredient, removeIngredient }) => {
 
     return ( 
         <div className = {classes.BunsControl}>

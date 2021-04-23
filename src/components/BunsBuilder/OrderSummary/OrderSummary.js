@@ -22,19 +22,8 @@ const OrderSummary = ({ ingredients, price}) => {
     EclerF2: "Strawberry ecler",
     MBunsF2: "Glazed mini cakes",
   };
-  let names = {};
-  function count(array) {
-    array.forEach((item) => {
-      names[item] = (names[item] || 0) + 1;
-    });
-  }
-  count(ingredients);
-
-  const results = (ingredients).map((type) => (
-    <li>
-      {labels[type]}: {names[type]}
-    </li>
-  ));
+  const results = Object.keys(ingredients)
+    .map(type => <li>{labels[type]}: {ingredients[type]}</li>);
 
   return (
     <div className={classes.OrderSummary}>

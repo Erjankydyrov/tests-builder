@@ -12,15 +12,17 @@ const BunsControls = ({
   removeIngredient,
 }) => {
   const result = [];
-  const names = ["PBuns", "Bread", "BBuns", "Crois", "Ecler", "MBuns"];
+  let total = 0;
 
-  for (const name in names) {
+  for (const ingredient in ingredients) {
+    total += ingredients[ingredient];
+    console.log(ingredient)
     result.push(
       <BunsControl
-        type={names[name] + filling}
-        key={names[name]}
+        type={ingredient + filling}
+        key={ingredient}
         switchFilling={switchFilling}
-        count={ingredients.length}
+        count={ingredients[ingredient]}
         addIngredient={addIngredient}
         removeIngredient={removeIngredient}
       />
@@ -31,7 +33,7 @@ const BunsControls = ({
       <SwitchBun switchFilling={switchFilling} />
       {result}
       <div className={classes.DivButton}>
-        <Button disabled={!ingredients.length} onClick={startOrdering} glav="true">
+        <Button disabled={!total} onClick={startOrdering} glav="true">
           Order
         </Button>
       </div>

@@ -14,9 +14,9 @@ const CheckoutSummary = ({ cancelCallback }) => {
           MBuns: 1,
         }} price={150} />
       </div>
-      <div>
-        <Button>Checkout</Button>
-        <Button onClick={cancelCallback}>Cancel</Button>
+      <div className={classes.Buttons}>
+        <Button green="true">Checkout</Button>
+        <Button order="true" onClick={cancelCallback}>Cancel</Button>
       </div>
     </div>
   );

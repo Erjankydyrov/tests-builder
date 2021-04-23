@@ -3,9 +3,10 @@ import classes from "./BunsPreview.module.css";
 
 const BunsPreview = ({ ingredients, price }) => {
     const result =[];
-
     for (const ingredient in ingredients) {
-        result.push(<BunsIngredient key={ingredients[ingredient] + ingredient} type={ingredients[ingredient]} />);
+        for (let i = 0; i < ingredients[ingredient]; i++) {
+        result.push(<BunsIngredient key={ingredient + i} type={ingredient} />)
+        }
     }
 
     return ( 
