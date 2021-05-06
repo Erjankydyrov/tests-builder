@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import classes from "./OrderSummary.module.css";
 
 const OrderSummary = ({ ingredients, price}) => {

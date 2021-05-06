@@ -7,33 +7,12 @@ import BunsControls from "./BunsControls/BunsControls";
 import BunsPreview from "./BunsPreview/BunsPreview";
 import OrderSummary from "./OrderSummary/OrderSummary";
 import Button from "../UI/Button/Button";
+import { useSelector } from "react-redux";
 
-const BunsBuilder = () => {
+const BunsBuilder = ({ history }) => {
 
-  const [ingredients, setIngredients] = useState({
-  });
-
-  const [price, setPrice] = useState(150);
-  const prices = {
-    PBuns: 5,
-    Bread: 5,
-    BBuns: 5,
-    Crois: 5,
-    Ecler: 5,
-    MBuns: 5,
-    PBunsF1: 5,
-    BreadF1: 5,
-    BBunsF1: 5,
-    CroisF1: 5,
-    EclerF1: 5,
-    MBunsF1: 5,
-    PBunsF2: 5,
-    BreadF2: 5,
-    BBunsF2: 5,
-    CroisF2: 5,
-    EclerF2: 5,
-    MBunsF2: 5,
-  };
+  const ingredients = useSelector(state => state.ingredients);
+  const price = useSelector(state => state.price);
 
   const [filling, setFilling] = useState("")
   function switchFilling(fillingBun) {
@@ -47,6 +26,17 @@ const BunsBuilder = () => {
   function stopOrdering() {
     setOrdering(false);
   }
+  
+  // useEffect(loadDefaults, []);
+
+  // function loadDefaults() {
+  //   axios
+  //     .get('https://builder-3fa6d-default-rtdb.firebaseio.com/default.json')
+  //     .then(response => {
+  //       setPrice(response.data.price);
+  //       setIngredients(response.data.ingredients);
+  //     });
+  // }
 
   function finishOrdering() {
     axios.post(`https://builder-3fa6d-default-rtdb.firebaseio.com/orders.json`, {
@@ -58,31 +48,9 @@ const BunsBuilder = () => {
         })
         .then(() => {
           setOrdering(false);
+          // loadDefaults();
+          history.push('/checkout');
         })
-  }
-
-  useEffect(() => {
-    axios.get(`https://builder-3fa6d-default-rtdb.firebaseio.com/default.json`)
-        .then((responce) => {
-          setPrice(responce.data.price);
-          setIngredients(responce.data.ingredients)
-        })
-  }, [])
-
-  function addIngredient(type) {
-    const newIngredients = { ...ingredients };
-    newIngredients[type]++;
-    setPrice(price + prices[type]);
-    setIngredients(newIngredients);
-  }
-
-  function removeIngredient(type) {
-    if (ingredients[type]) {
-      const newIngredients = { ...ingredients };
-      newIngredients[type]--;
-      setPrice(price - prices[type]);
-      setIngredients(newIngredients);
-    }
   }
 
   return (
@@ -92,8 +60,6 @@ const BunsBuilder = () => {
         filling={filling}
         ingredients={ingredients}
         switchFilling={switchFilling}
-        addIngredient={addIngredient}
-        removeIngredient={removeIngredient}
         startOrdering = {startOrdering}
       />
       <Modal

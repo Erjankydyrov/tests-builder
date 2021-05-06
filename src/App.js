@@ -3,6 +3,7 @@ import "./App.css";
 import BunsBuilder from "./components/BunsBuilder/BunsBuilder";
 import Checkout from "./components/Checkout/Checkout";
 import Layout from "./components/Layout/Layout";
+import Orders from "./components/Orders/Orders";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Switch>
           <Route path="/" component={BunsBuilder} exact />
           <Route path="/checkout" component={Checkout} />
+          <Route path="/orders" component={Orders} />
           <Redirect to="/" />
         </Switch>
       </Layout>
