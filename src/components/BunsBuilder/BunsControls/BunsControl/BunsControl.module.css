@@ -15,6 +15,7 @@
 }
 .BunsControl .ingredient div {
     position: static;
+    transform: rotate(0);
 }
 .ControlButton:hover {
     color: white;
