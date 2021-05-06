@@ -191,8 +191,9 @@ const BunsIngredient = ({ type, fixed }) => {
     types[type].top = position.top + "px";
     types[type].left = position.left + "px";
   }
+  
   // Get random rotation for this ingredient.
-  types[type].transform = `rotate(${Math.round(Math.random() * 360)}deg)`;
+  // types[type].transform = `rotate(${Math.round(Math.random() * 360)}deg)`;
 
   return <div className={classes.BunsIngredient} style={types[type]}></div>;
 };
