@@ -13,6 +13,9 @@
     height: 30px;
     outline: none;
 }
+.BunsControl .ingredient div {
+    position: static;
+}
 .ControlButton:hover {
     color: white;
     background-color: #b709ce;

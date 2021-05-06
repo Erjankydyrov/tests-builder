@@ -11,8 +11,10 @@ const BunsPreview = ({ ingredients, price }) => {
 
     return ( 
         <div className = {classes.BunsPreview}>
-            <div className={classes.ingredients}>
-                {result}
+            <div className={classes.bun}>
+                <div className={classes.ingredients}>
+                    {result}
+                </div>
             </div>
             <div className={classes.price}>{price.toFixed(1)} som</div>
         </div>

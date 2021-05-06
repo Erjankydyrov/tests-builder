@@ -17,8 +17,9 @@ import eclerF2 from "../../../images/eclerF2.svg";
 import blackBunF2 from "../../../images/blackBunF2.svg";
 import miniBunsF2 from "../../../images/miniBunsF2.svg";
 import croissantF2 from "../../../images/croissantF2.svg";
+import React from "react";
 
-const BunsIngredient = ({ type }) => {
+const BunsIngredient = ({ type, fixed }) => {
   const types = {
     PBuns: {
       backgroundImage: `url("${buns}")`,
@@ -166,7 +167,34 @@ const BunsIngredient = ({ type }) => {
     },
   };
 
+  function getPosition(ingredientWidth) {
+    const pizzaDiameter = 320;
+
+    const ingredientTop = Math.round(Math.random() * pizzaDiameter);
+    const ingredientLeft = Math.round(Math.random() * pizzaDiameter);
+
+    const distance = Math.sqrt(
+      Math.pow(ingredientTop, 2) + Math.pow(ingredientLeft, 2)
+    );
+
+    return distance
+      ? {
+        top: ingredientTop,
+        left: ingredientLeft
+      }
+      : getPosition(ingredientWidth);
+  }
+
+  // Get random position for this ingredient.
+  if (!fixed) {
+    const position = getPosition(types[type].width);
+    types[type].top = position.top + "px";
+    types[type].left = position.left + "px";
+  }
+  // Get random rotation for this ingredient.
+  types[type].transform = `rotate(${Math.round(Math.random() * 360)}deg)`;
+
   return <div className={classes.BunsIngredient} style={types[type]}></div>;
 };
 
-export default BunsIngredient;
+export default React.memo(BunsIngredient);

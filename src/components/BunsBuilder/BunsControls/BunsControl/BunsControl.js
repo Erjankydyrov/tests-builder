@@ -9,7 +9,9 @@ const BunsControl = ({ count, type, filling }) => {
     return ( 
         <div className = {classes.BunsControl}>
             <Button className = {classes.ControlButton} onClick = {() => dispatch({ type: "REMOVE_INGREDIENT", ingredient: type })} disabled={!count}>-</Button>
-            <BunsIngredient type = {type + filling} />
+            <div className={classes.ingredient}>
+                <BunsIngredient type = {type + filling} fixed />
+            </div>
             <Button className = {classes.ControlButton} onClick = {() => dispatch({ type: "ADD_INGREDIENT", ingredient: type })}>+</Button>
         </div>
     );
