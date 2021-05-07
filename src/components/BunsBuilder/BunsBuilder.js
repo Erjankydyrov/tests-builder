@@ -7,12 +7,15 @@ import BunsControls from "./BunsControls/BunsControls";
 import BunsPreview from "./BunsPreview/BunsPreview";
 import OrderSummary from "./OrderSummary/OrderSummary";
 import Button from "../UI/Button/Button";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { load } from "../../store/actions/builder";
 
 const BunsBuilder = ({ history }) => {
 
-  const ingredients = useSelector(state => state.ingredients);
-  const price = useSelector(state => state.price);
+  const dispatch = useDispatch()
+
+  const ingredients = useSelector(state => state.builder.ingredients);
+  const price = useSelector(state => state.builder.price);
 
   const [filling, setFilling] = useState("")
   function switchFilling(fillingBun) {
@@ -27,7 +30,7 @@ const BunsBuilder = ({ history }) => {
     setOrdering(false);
   }
   
-  // useEffect(loadDefaults, []);
+  useEffect(() => dispatch(load()), []);
 
   // function loadDefaults() {
   //   axios
