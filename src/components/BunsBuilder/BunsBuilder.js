@@ -42,18 +42,9 @@ const BunsBuilder = ({ history }) => {
   // }
 
   function finishOrdering() {
-    axios.post(`https://builder-3fa6d-default-rtdb.firebaseio.com/orders.json`, {
-          ingredients: ingredients,
-          price: price,
-          address: "1234 Jusaeva str",
-          phone: "0 777 777 777",
-          name: "Sadyr Japarov",
-        })
-        .then(() => {
-          setOrdering(false);
-          // loadDefaults();
-          history.push('/checkout');
-        })
+      setOrdering(false);
+      // loadDefaults();
+      history.push('/checkout');
   }
 
   return (

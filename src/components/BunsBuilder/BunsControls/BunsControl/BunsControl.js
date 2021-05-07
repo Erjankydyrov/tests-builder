@@ -7,13 +7,11 @@ import classes from "./BunsControl.module.css";
 const BunsControl = ({ count, type, filling }) => {
     const dispatch = useDispatch();
 
-    console.log(type);
-
     return ( 
         <div className = {classes.BunsControl}>
             <Button className = {classes.ControlButton} onClick = {() => dispatch(remove(type))} disabled={!count}>-</Button>
             <div className={classes.ingredient}>
-                <BunsIngredient type = {type + filling} fixed />
+                <BunsIngredient type = {type} filling={filling} fixed />
             </div>
             <Button className = {classes.ControlButton} onClick = {() => dispatch(add(type))}>+</Button>
         </div>
