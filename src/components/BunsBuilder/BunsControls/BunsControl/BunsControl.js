@@ -1,4 +1,5 @@
 import { useDispatch } from "react-redux";
+import { add, remove } from "../../../../store/actions/builder";
 import Button from "../../../UI/Button/Button";
 import BunsIngredient from "../../BunsIngredient/BunsIngredient";
 import classes from "./BunsControl.module.css";
@@ -6,13 +7,15 @@ import classes from "./BunsControl.module.css";
 const BunsControl = ({ count, type, filling }) => {
     const dispatch = useDispatch();
 
+    console.log(type);
+
     return ( 
         <div className = {classes.BunsControl}>
-            <Button className = {classes.ControlButton} onClick = {() => dispatch({ type: "REMOVE_INGREDIENT", ingredient: type })} disabled={!count}>-</Button>
+            <Button className = {classes.ControlButton} onClick = {() => dispatch(remove(type))} disabled={!count}>-</Button>
             <div className={classes.ingredient}>
                 <BunsIngredient type = {type + filling} fixed />
             </div>
-            <Button className = {classes.ControlButton} onClick = {() => dispatch({ type: "ADD_INGREDIENT", ingredient: type })}>+</Button>
+            <Button className = {classes.ControlButton} onClick = {() => dispatch(add(type))}>+</Button>
         </div>
     );
 }
