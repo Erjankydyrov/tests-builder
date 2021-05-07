@@ -1,15 +1,9 @@
-import { ADD_INGREDIENT, REMOVE_INGREDIENT } from "./actions/types";
+import { ADD_INGREDIENT, REMOVE_INGREDIENT, SET_INGREDIENTS } from "../actions/types";
 
 const initialState = {
   ingredients: {
-    PBuns: 1,
-    Bread: 1,
-    BBuns: 1,
-    Crois: 1,
-    Ecler: 1,
-    MBuns: 1,
   },
-  price: 250,
+  price: 0,
 };
 const prices = {
   PBuns: 10,
@@ -32,7 +26,7 @@ const prices = {
   MBunsF2: 15,
 };
 
-const builderReducer = (state = initialState, action) => {
+const builder = (state = initialState, action) => {
   const newState = { ...state };
 
   switch (action.type) {
@@ -44,6 +38,10 @@ const builderReducer = (state = initialState, action) => {
       newState.ingredients[action.ingredient]--;
       newState.price -= prices[action.ingredient];
       break;
+    case SET_INGREDIENTS:
+      newState.ingredients = action.data.ingredients;
+      newState.price = action.data.price;
+      break;
 
     default:
       break;
@@ -52,4 +50,4 @@ const builderReducer = (state = initialState, action) => {
   return newState;
 }
 
-export default builderReducer; 
+export default builder; 
