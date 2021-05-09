@@ -9,6 +9,7 @@ import OrderSummary from "./OrderSummary/OrderSummary";
 import Button from "../UI/Button/Button";
 import { useDispatch, useSelector } from "react-redux";
 import { load } from "../../store/actions/builder";
+import withAxios from "../withAxios";
 
 const BunsBuilder = ({ history }) => {
 
@@ -71,4 +72,4 @@ const BunsBuilder = ({ history }) => {
   );
 };
 
-export default React.memo(BunsBuilder);
+export default withAxios(BunsBuilder, axios);
