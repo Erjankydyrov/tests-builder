@@ -14,6 +14,6 @@ const Modal = ({ show, children, cancel }) => {
       </div>
     </div>
   );
-}
+};
 
 export default Modal;

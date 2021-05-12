@@ -1,6 +1,6 @@
 import classes from "./OrderSummary.module.css";
 
-const OrderSummary = ({ ingredients, price, key}) => {
+const OrderSummary = ({ ingredients, price, key }) => {
   const labels = {
     PBuns: "Cake",
     Bread: "Roll",
@@ -21,8 +21,11 @@ const OrderSummary = ({ ingredients, price, key}) => {
     EclerF2: "Strawberry ecler",
     MBunsF2: "Glazed mini cakes",
   };
-  const results = Object.keys(ingredients)
-    .map((type, id) => <li key={id}>{labels[type]}: {ingredients[type]}</li>);
+  const results = Object.keys(ingredients).map((type, id) => (
+    <li key={id}>
+      {labels[type]}: {ingredients[type]}
+    </li>
+  ));
 
   return (
     <div className={classes.OrderSummary}>

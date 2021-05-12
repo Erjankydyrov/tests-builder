@@ -12,17 +12,16 @@ import { load } from "../../store/actions/builder";
 import withAxios from "../withAxios";
 
 const BunsBuilder = ({ history }) => {
+  const dispatch = useDispatch();
 
-  const dispatch = useDispatch()
+  const ingredients = useSelector((state) => state.builder.ingredients);
+  const price = useSelector((state) => state.builder.price);
 
-  const ingredients = useSelector(state => state.builder.ingredients);
-  const price = useSelector(state => state.builder.price);
-
-  const [filling, setFilling] = useState("")
+  const [filling, setFilling] = useState("");
   function switchFilling(fillingBun) {
-    setFilling(fillingBun)
+    setFilling(fillingBun);
   }
-  
+
   const [ordering, setOrdering] = useState(false);
   function startOrdering() {
     setOrdering(true);
@@ -30,7 +29,7 @@ const BunsBuilder = ({ history }) => {
   function stopOrdering() {
     setOrdering(false);
   }
-  
+
   useEffect(() => dispatch(load()), []);
 
   // function loadDefaults() {
@@ -43,31 +42,35 @@ const BunsBuilder = ({ history }) => {
   // }
 
   function finishOrdering() {
-      setOrdering(false);
-      // loadDefaults();
-      history.push('/checkout');
+    setOrdering(false);
+    // loadDefaults();
+    history.push("/checkout");
   }
 
   return (
     <div className={classes.BunsBuilder}>
-      <BunsPreview price={price} ingredients={ingredients} startOrdering={startOrdering}/>
+      <BunsPreview
+        price={price}
+        ingredients={ingredients}
+        startOrdering={startOrdering}
+      />
       <BunsControls
         filling={filling}
         ingredients={ingredients}
         switchFilling={switchFilling}
-        startOrdering = {startOrdering}
+        startOrdering={startOrdering}
       />
-      <Modal
-        show={ordering}
-        cancel={stopOrdering}>
-          <OrderSummary
-            ingredients={ingredients}
-            price={price}/>
-            <div className={classes.CaseButtons}>
-              <Button onClick={finishOrdering} green="true">Checkout</Button>
-              <Button onClick={stopOrdering} order="true">Cancel</Button>
-            </div>
-        </Modal>
+      <Modal show={ordering} cancel={stopOrdering}>
+        <OrderSummary ingredients={ingredients} price={price} />
+        <div className={classes.CaseButtons}>
+          <Button onClick={finishOrdering} green="green">
+            Checkout
+          </Button>
+          <Button onClick={stopOrdering} order="order">
+            Cancel
+          </Button>
+        </div>
+      </Modal>
     </div>
   );
 };

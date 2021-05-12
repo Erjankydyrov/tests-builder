@@ -3,22 +3,24 @@ import BunsControl from "./BunsControl/BunsControl";
 import classes from "./BunsControls.module.css";
 import SwitchBun from "./SwitchBun/SwitchBun";
 
+const predIngredients = ["BBuns", "Bread", "Crois", "Ecler", "MBuns", "PBuns"];
+
 const BunsControls = ({
   switchFilling,
   startOrdering,
   filling,
   ingredients,
 }) => {
-
   const result = [];
   let total = 0;
 
-  for (const ingredient in ingredients) {
+  for (const key in predIngredients) {
+    const ingredient = predIngredients[key];
     total += ingredients[ingredient];
 
     result.push(
       <BunsControl
-        type={ingredient}
+        type={ingredient + filling}
         key={ingredient}
         filling={filling}
         switchFilling={switchFilling}

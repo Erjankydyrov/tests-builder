@@ -39,7 +39,7 @@ const withAxios = (WrappedComponent, axios) => {
         <WrappedComponent {...props} />
       </>
     );
-  }
-}
+  };
+};
 
-export default withAxios; 
+export default withAxios;
