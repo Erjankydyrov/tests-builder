@@ -3,8 +3,8 @@
     text-decoration: none;
     display: block;
     padding: 10px 15px;
-    border-radius: 15px;
-    margin-left: 10px;
+    border-radius: 3px;
+    margin-right: 15px;
     transition: background-color .5s ease-out;
 }
 .NavItem a:hover {
@@ -13,13 +13,13 @@
 }
 .NavItem a:active,
 .NavItem a.active {
+    border-color: white;
     background-color: #ffc240;
 } 
 
 @media (max-width: 549px) {
     .NavItem a {
-        border-top-right-radius: 0px;
-        border-bottom-right-radius: 0px;
+        margin-right: 0;
         border-right: 10px solid transparent;
         border-bottom: none;
     }
