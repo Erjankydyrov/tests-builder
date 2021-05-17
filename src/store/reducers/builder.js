@@ -36,6 +36,7 @@ const builder = (state = initialState, action) => {
     case ADD_INGREDIENT:
       newState.ingredients[action.ingredient]++;
       newState.price += prices[action.ingredient];
+      console.log(newState.ingredients, action.ingredient);
       break;
     case REMOVE_INGREDIENT:
       newState.ingredients[action.ingredient]--;

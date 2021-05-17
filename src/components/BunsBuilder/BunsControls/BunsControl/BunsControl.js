@@ -10,7 +10,7 @@ const BunsControl = ({ count, type, filling }) => {
     <div className={classes.BunsControl}>
       <Button
         className={classes.ControlButton}
-        onClick={() => dispatch(remove(type + filling))}
+        onClick={() => dispatch(remove(type))}
         disabled={!count}
       >
         -
@@ -20,7 +20,7 @@ const BunsControl = ({ count, type, filling }) => {
       </div>
       <Button
         className={classes.ControlButton}
-        onClick={() => dispatch(add(type + filling))}
+        onClick={() => dispatch(add(type))}
       >
         +
       </Button>
