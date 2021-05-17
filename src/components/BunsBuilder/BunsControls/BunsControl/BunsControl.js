@@ -4,7 +4,7 @@ import Button from "../../../UI/Button/Button";
 import BunsIngredient from "../../BunsIngredient/BunsIngredient";
 import classes from "./BunsControl.module.css";
 
-const BunsControl = ({ count, type, filling }) => {
+const BunsControl = ({ count, type }) => {
   const dispatch = useDispatch();
   return (
     <div className={classes.BunsControl}>

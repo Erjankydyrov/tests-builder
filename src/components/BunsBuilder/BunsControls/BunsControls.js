@@ -22,7 +22,6 @@ const BunsControls = ({
       <BunsControl
         type={ingredient + filling}
         key={ingredient}
-        filling={filling}
         switchFilling={switchFilling}
         count={ingredients[ingredient]}
       />
