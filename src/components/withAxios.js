@@ -1,12 +1,11 @@
-import { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
 import Modal from "./UI/Modal/Modal";
-import axios from "../axios";
 
 const withAxios = (WrappedComponent, axios) => {
   return (props) => {
     const [error, setError] = useState(null);
 
-    function hideError() {
+    function hideModal() {
       setError(false);
     }
 
@@ -33,7 +32,7 @@ const withAxios = (WrappedComponent, axios) => {
 
     return (
       <>
-        <Modal show={error} cancel={hideError}>
+        <Modal show={error} hideCallback={hideModal}>
           {error ? error.message : "Unknown error"}
         </Modal>
         <WrappedComponent {...props} />
@@ -42,4 +41,4 @@ const withAxios = (WrappedComponent, axios) => {
   };
 };
 
-export default withAxios;
+export default withAxios; 
