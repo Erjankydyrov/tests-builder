@@ -8,11 +8,12 @@ import classes from "./Orders.module.css";
 
 const Orders = () => {
   const dispatch = useDispatch();
+  const { token, id } = useSelector(state => state.auth)
   const orders = useSelector((state) => state.orders);
 
   useEffect(() => {
-    dispatch(load());
-  }, []);
+    dispatch(load(token, id));
+  }, [dispatch]);
 
   const results = orders.map((order) => <Order key={order.id} {...order} />);
 

@@ -17,14 +17,22 @@ const BunsBuilder = ({ history }) => {
   const ingredients = useSelector((state) => state.builder.ingredients);
   const price = useSelector((state) => state.builder.price);
 
+  const isAuthenticated = useSelector(state => state.auth.token !== null);
+
   const [filling, setFilling] = useState("");
   function switchFilling(fillingBun) {
     setFilling(fillingBun);
   }
 
   const [ordering, setOrdering] = useState(false);
+
   function startOrdering() {
-    setOrdering(true);
+    if (isAuthenticated) {
+      setOrdering(true);
+    }
+    else {
+      history.push("/auth");
+    }
   }
   function stopOrdering() {
     setOrdering(false);
