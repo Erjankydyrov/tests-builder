@@ -23,7 +23,7 @@ const BunsControls = ({
         type={ingredient + filling}
         key={ingredient}
         switchFilling={switchFilling}
-        count={ingredients[ingredient]}
+        count={ingredients[ingredient + filling]}
       />
     );
   }

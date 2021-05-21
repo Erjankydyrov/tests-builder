@@ -42,8 +42,7 @@ const builder = (state = initialState, action) => {
       newState.price -= prices[action.ingredient];
       break;
     case SET_INGREDIENTS:
-      newState.ingredients = action.data.ingredients;
-      newState.price = action.data.price;
+      return { ...action.data };
       break;
 
     default:
