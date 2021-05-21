@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios from "../../axios";
 import React, { useEffect } from "react";
 import { useState } from "react";
 import Modal from "../UI/Modal/Modal";
@@ -39,15 +39,6 @@ const BunsBuilder = ({ history }) => {
   }
 
   useEffect(() => dispatch(load()), []);
-
-  // function loadDefaults() {
-  //   axios
-  //     .get('https://builder-3fa6d-default-rtdb.firebaseio.com/default.json')
-  //     .then(response => {
-  //       setPrice(response.data.price);
-  //       setIngredients(response.data.ingredients);
-  //     });
-  // }
 
   function finishOrdering() {
     setOrdering(false);

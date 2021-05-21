@@ -191,7 +191,6 @@ const BunsIngredient = ({ type, fixed }) => {
     types[type].top = position.top + "px";
     types[type].left = position.left + "px";
   }
-  console.log(type);
   // Get random rotation for this ingredient.
   // types[type].transform = `rotate(${Math.round(Math.random() * 360)}deg)`;
 
