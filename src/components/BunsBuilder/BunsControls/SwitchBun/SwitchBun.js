@@ -8,7 +8,7 @@ const SwitchBun = ({ switchFilling }) => {
       type="radio"
       id="F1"
       name="fil"
-      onChange={() => switchFilling("F1")}
+      onChange={() => switchFilling("Chocolate")}
     />
   );
 
@@ -26,7 +26,7 @@ const SwitchBun = ({ switchFilling }) => {
       type="radio"
       id="F2"
       name="fil"
-      onChange={() => switchFilling("F2")}
+      onChange={() => switchFilling("Vanilla")}
     />
   );
 

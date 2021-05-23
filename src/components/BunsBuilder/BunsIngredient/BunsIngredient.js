@@ -5,18 +5,18 @@ import blackBun from "../../../images/blackBun.svg";
 import croissant from "../../../images/croissant.svg";
 import ecler from "../../../images/ecler.svg";
 import miniBuns from "../../../images/miniBuns.svg";
-import bunsF1 from "../../../images/bunsF1.svg";
-import breadF1 from "../../../images/breadF1.svg";
-import blackBunF1 from "../../../images/blackBunF1.svg";
-import miniBunsF1 from "../../../images/miniBunsF1.svg";
-import croissantF1 from "../../../images/croissantF1.svg";
-import eclerF1 from "../../../images/eclerF1.svg";
-import bunsF2 from "../../../images/bunsF2.svg";
-import breadF2 from "../../../images/breadF2.svg";
-import eclerF2 from "../../../images/eclerF2.svg";
-import blackBunF2 from "../../../images/blackBunF2.svg";
-import miniBunsF2 from "../../../images/miniBunsF2.svg";
-import croissantF2 from "../../../images/croissantF2.svg";
+import bunsChocolate from "../../../images/bunsF1.svg";
+import breadChocolate from "../../../images/breadF1.svg";
+import blackBunChocolate from "../../../images/blackBunF1.svg";
+import miniBunsChocolate from "../../../images/miniBunsF1.svg";
+import croissantChocolate from "../../../images/croissantF1.svg";
+import eclerChocolate from "../../../images/eclerF1.svg";
+import bunsVanilla from "../../../images/bunsF2.svg";
+import breadVanilla from "../../../images/breadF2.svg";
+import eclerVanilla from "../../../images/eclerF2.svg";
+import blackBunVanilla from "../../../images/blackBunF2.svg";
+import miniBunsVanilla from "../../../images/miniBunsF2.svg";
+import croissantVanilla from "../../../images/croissantF2.svg";
 import React from "react";
 
 const BunsIngredient = ({ type, fixed }) => {
@@ -69,96 +69,96 @@ const BunsIngredient = ({ type, fixed }) => {
       marginRight: "5px",
       display: "inline-block",
     },
-    PBunsF1: {
-      backgroundImage: `url("${bunsF1}")`,
+    PBunsChocolate: {
+      backgroundImage: `url("${bunsChocolate}")`,
       backgroundSize: "Cover",
       width: "55px",
       height: "55px",
       marginRight: "5px",
       display: "inline-block",
     },
-    BreadF1: {
-      backgroundImage: `url("${breadF1}")`,
+    BreadChocolate: {
+      backgroundImage: `url("${breadChocolate}")`,
       backgroundSize: "Cover",
       width: "55px",
       height: "55px",
       marginRight: "5px",
       display: "inline-block",
     },
-    MBunsF1: {
-      backgroundImage: `url("${miniBunsF1}")`,
+    MBunsChocolate: {
+      backgroundImage: `url("${miniBunsChocolate}")`,
       backgroundSize: "Cover",
       width: "55px",
       height: "55px",
       marginRight: "5px",
       display: "inline-block",
     },
-    CroisF1: {
-      backgroundImage: `url("${croissantF1}")`,
+    CroisChocolate: {
+      backgroundImage: `url("${croissantChocolate}")`,
       backgroundSize: "Cover",
       width: "55px",
       height: "55px",
       marginRight: "5px",
       display: "inline-block",
     },
-    EclerF1: {
-      backgroundImage: `url("${eclerF1}")`,
+    EclerChocolate: {
+      backgroundImage: `url("${eclerChocolate}")`,
       backgroundSize: "Cover",
       width: "55px",
       height: "55px",
       marginRight: "5px",
       display: "inline-block",
     },
-    BBunsF1: {
-      backgroundImage: `url("${blackBunF1}")`,
+    BBunsChocolate: {
+      backgroundImage: `url("${blackBunChocolate}")`,
       backgroundSize: "Cover",
       width: "55px",
       height: "55px",
       marginRight: "5px",
       display: "inline-block",
     },
-    PBunsF2: {
-      backgroundImage: `url("${bunsF2}")`,
+    PBunsVanilla: {
+      backgroundImage: `url("${bunsVanilla}")`,
       backgroundSize: "Cover",
       width: "55px",
       height: "55px",
       marginRight: "5px",
       display: "inline-block",
     },
-    BreadF2: {
-      backgroundImage: `url("${breadF2}")`,
+    BreadVanilla: {
+      backgroundImage: `url("${breadVanilla}")`,
       backgroundSize: "Cover",
       width: "55px",
       height: "55px",
       marginRight: "5px",
       display: "inline-block",
     },
-    MBunsF2: {
-      backgroundImage: `url("${miniBunsF2}")`,
+    MBunsVanilla: {
+      backgroundImage: `url("${miniBunsVanilla}")`,
       backgroundSize: "Cover",
       width: "55px",
       height: "55px",
       marginRight: "5px",
       display: "inline-block",
     },
-    CroisF2: {
-      backgroundImage: `url("${croissantF2}")`,
+    CroisVanilla: {
+      backgroundImage: `url("${croissantVanilla}")`,
       backgroundSize: "Cover",
       width: "55px",
       height: "55px",
       marginRight: "5px",
       display: "inline-block",
     },
-    EclerF2: {
-      backgroundImage: `url("${eclerF2}")`,
+    EclerVanilla: {
+      backgroundImage: `url("${eclerVanilla}")`,
       backgroundSize: "Cover",
       width: "55px",
       height: "55px",
       marginRight: "5px",
       display: "inline-block",
     },
-    BBunsF2: {
-      backgroundImage: `url("${blackBunF2}")`,
+    BBunsVanilla: {
+      backgroundImage: `url("${blackBunVanilla}")`,
       backgroundSize: "Cover",
       width: "55px",
       height: "55px",
