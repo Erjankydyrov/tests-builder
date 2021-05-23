@@ -17,7 +17,7 @@ const BunsBuilder = ({ history }) => {
   const ingredients = useSelector((state) => state.builder.ingredients);
   const price = useSelector((state) => state.builder.price);
 
-  const isAuthenticated = useSelector(state => state.auth.token !== null);
+  const isAuthenticated = useSelector((state) => state.auth.token !== null);
 
   const [filling, setFilling] = useState("");
   function switchFilling(fillingBun) {
@@ -29,8 +29,7 @@ const BunsBuilder = ({ history }) => {
   function startOrdering() {
     if (isAuthenticated) {
       setOrdering(true);
-    }
-    else {
+    } else {
       history.push("/auth");
     }
   }
@@ -42,7 +41,6 @@ const BunsBuilder = ({ history }) => {
 
   function finishOrdering() {
     setOrdering(false);
-    // loadDefaults();
     history.push("/checkout");
   }
 

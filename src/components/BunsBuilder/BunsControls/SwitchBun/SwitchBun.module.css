@@ -1,12 +1,14 @@
-.SwitchBun{
-    display: flex;
-    justify-content: space-between;
-    max-width: 200px;
-    margin: 0 auto;
+.SwitchBun {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 0 auto;
+  min-width: 260px;
 }
-.inp{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-family: 'Jura';
+.inp {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  font-family: "Jura";
 }
