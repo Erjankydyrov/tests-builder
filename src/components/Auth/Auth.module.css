@@ -1,0 +1,12 @@
+.Auth {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin: 0 auto;
+  min-width: 250px;
+  min-height: 220px;
+}
+.Buttons {
+  display: flex;
+  justify-content: space-evenly;
+}

@@ -26,12 +26,14 @@ export default withAxios(() => {
   let formOutput = "Loading...";
   if (!loading) {
     formOutput = (
-      <form onSubmit={formSubmitted}>
+      <form className={classes.Auth} onSubmit={formSubmitted}>
         <h1>Welcome</h1>
         <input type="email" placeholder="E-mail" name="email" required />
         <input type="password" placeholder="Password" name="password" required minLength="6" />
-        <Button green="true">Sign in</Button>
-        <Button order="true">Sign up</Button>
+        <div className={classes.Buttons}>
+          <Button green="true">Sign in</Button>
+          <Button order="true">Sign up</Button>
+        </div>
       </form>
     );
   }
