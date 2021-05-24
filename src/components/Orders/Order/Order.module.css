@@ -1,0 +1,12 @@
+.Order {
+  box-shadow: 0 0 10px black;
+  min-width: 270px;
+  padding: 20px 10px;
+}
+ul {
+  padding: 0;
+}
+h2 {
+  margin: 0;
+  text-align: center;
+}

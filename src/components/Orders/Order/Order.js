@@ -30,11 +30,21 @@ const Order = ({ name, phone, address, ingredients, price }) => {
 
   return (
     <div className={classes.Order}>
+      <h2>Receipt</h2>
+      <hr className={classes.hr} />
       <div>
-        {name}, {phone}, {address}
+        Name: {name}
       </div>
+      <div>
+        Phone: {phone}
+      </div>
+      <div>
+        Address: {address}
+      </div>
+      <hr className={classes.hr} />
       <ul>{outputIngredients}</ul>
-      <strong>{price}</strong>
+      <hr />
+      <strong>Price: {price}</strong>
     </div>
   );
 };
